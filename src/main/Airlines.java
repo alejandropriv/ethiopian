@@ -11,15 +11,28 @@ public class Airlines {
 
 		Ethiopian ethiopian = new Ethiopian(driver.driver); 
 
+		String webpageStr  = "https://www.ethiopianairlines.com/AA/DE/";
+		driver.driver.get(webpageStr);
+		driver.driver.manage().window().maximize();
+		
 		try {
 			ethiopian.bookingPageInit();
 			ethiopian.createBooking();
 			
 			driver.driver.manage().timeouts().pageLoadTimeout(40, TimeUnit.SECONDS);
 			
+			Thread.sleep(2000);
 			
-			ethiopian.validateBookingInit();
-			ethiopian.validateBooking();	
+			ethiopian.trainInit();
+			ethiopian.train();	
+
+			ethiopian.departureFlightInit();
+			ethiopian.departureFlight();
+		
+			driver.driver.manage().timeouts().pageLoadTimeout(40, TimeUnit.SECONDS);
+			
+			ethiopian.returnFlightInit();
+			ethiopian.returnFlight();
 			
 			//driver.driver.close();
 			
