@@ -3,12 +3,19 @@ package main;
 import java.util.concurrent.TimeUnit;
 
 import Utilities.Element;
+import airlines.CheapFlights;
 
 public class Airlines {
 
 	public static void main (String[] args) {
-		Driver driver = new Driver(0);
 
+		CheapFlights cheapFlights = new CheapFlights();
+		
+	}
+	
+	public void ethiopian() {
+		
+		Driver driver = new Driver(0);
 		Ethiopian ethiopian = new Ethiopian(driver.driver); 
 
 		String webpageStr  = "https://www.ethiopianairlines.com/AA/DE/";
